@@ -78,28 +78,30 @@ Aplikasi web sederhana yang dibangun menggunakan PHP Native (tanpa framework) un
 ---
 
 ## 📁 Struktur Folder
+```
 /Proyek-CRUD-Web
-<br>├── /config         // Koneksi database dan konfigurasi
-<br>│   └── database.php
-<br>├── /public         // File yang diakses langsung (CSS, JS, images)
-<br>│   ├── /css
-<br>│   │   └── style.css
-<br>│   └── /js
-<br>│       └── script.js
-<br>├── /src            // Logika inti aplikasi (fungsi, class, dll)
-<br>│   └── functions.php   // (Opsional, untuk helper)
-<br>├── /templates      // Bagian template yang bisa dipakai ulang
-<br>│   ├── header.php
-<br>│   └── footer.php
-<br>│
-<br>├── index.php       // Halaman Read (List) + Pencarian + Paginasi
-<br>├── create.php      // Halaman Create (Form)
-<br>├── create_process.php // Logika backend untuk Create
-<br>├── update.php        // Halaman Update (Form)
-<br>├── update_process.php // Logika backend untuk Update
-<br>├── delete.php       // Logika backend untuk Delete
-<br>├── read.php      // Halaman Read (Detail)
-<br>└── README.md
+├── /config         // Koneksi database dan konfigurasi
+│   └── database.php
+├── /public         // File yang diakses langsung (CSS, JS, images)
+│   ├── /css
+│   │   └── style.css
+│   └── /js
+│       └── script.js
+├── /src            // Logika inti aplikasi (fungsi, class, dll)
+│   └── functions.php   // (Opsional, untuk helper)
+├── /templates      // Bagian template yang bisa dipakai ulang
+│   ├── header.php
+│   └── footer.php
+│
+├── index.php       // Halaman Read (List) + Pencarian + Paginasi
+├── create.php      // Halaman Create (Form)
+├── create_process.php // Logika backend untuk Create
+├── update.php        // Halaman Update (Form)
+├── update_process.php // Logika backend untuk Update
+├── delete.php       // Logika backend untuk Delete
+├── read.php      // Halaman Read (Detail)
+└── README.md
+```
 
 ---
 
