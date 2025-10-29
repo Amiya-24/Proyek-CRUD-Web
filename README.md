@@ -49,7 +49,12 @@ Aplikasi web sederhana yang dibangun menggunakan PHP Native (tanpa framework) un
     CREATE DATABASE db_crud_php_native;
     ```
 
-3.  **Impor Tabel `barang`**
+3.  **Guakan Database**
+    ```sql
+    USE db_crud_php_native;
+    ```
+
+4.  **Impor Tabel `barang`**
     Jalankan kueri SQL berikut di dalam database `db_crud_php_native` untuk membuat tabel `barang`:
     ```sql
     CREATE TABLE barang (
@@ -64,10 +69,10 @@ Aplikasi web sederhana yang dibangun menggunakan PHP Native (tanpa framework) un
     );
     ```
 
-4.  **Konfigurasi Database**
+5.  **Konfigurasi Database**
     Buka file `config/database.php` dan sesuaikan nilainya (`$host`, `$db`, `$user`, `$pass`) agar cocok dengan konfigurasi database lokal Anda. (Lihat contoh di bawah).
 
-5.  **Jalankan Aplikasi**
+6.  **Jalankan Aplikasi**
     Buka browser Anda dan akses proyek dari server lokal Anda (misal: `http://Proyek-CRUD-Web.test` atau `http://localhost/Proyek-CRUD-Web`).
 
 ---
