@@ -25,12 +25,10 @@ Aplikasi web sederhana yang dibangun menggunakan PHP Native (tanpa framework) un
 
 ## 🛠️ Kebutuhan Sistem
 
-* Web Server (Contoh: Apache, Nginx).
-* PHP 7.4 atau lebih baru (dengan ekstensi `pdo_mysql` aktif).
+* Server Lokal (Laragon / XAMPP).
+* PHP Minimal 8.0.
 * Database Server (MySQL / MariaDB).
 * Web Browser (Chrome, Firefox, Safari, dll.).
-
-*Direkomendasikan:* Lingkungan pengembangan lokal terpadu seperti **Laragon** atau **XAMPP** yang sudah mencakup semua kebutuhan di atas.
 
 ---
 
@@ -131,3 +129,4 @@ try {
 } catch (\PDOException $e) {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+```
