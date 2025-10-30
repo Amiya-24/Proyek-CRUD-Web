@@ -130,3 +130,19 @@ try {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 ```
+
+---
+
+## 📸 Screenshot
+
+1. **Halaman Utama (Daftar Barang & Paginasi)**
+![Halaman Utama](img/Screenshot%20(87).png)
+
+2. **Fitur Pencarian**
+![Fitur Pencarian](img/Screenshot%20(88).png)
+
+3. **Halaman Tambah Barang**
+![Halaman Tambah Barang](img/Screenshot%20(89).png)
+
+4. **Notifikasi Sukses (Setelah Menambah Data)**
+![Notifikasi Sukses](img/Screenshot%20(90).png)
