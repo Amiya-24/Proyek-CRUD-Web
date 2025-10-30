@@ -17,7 +17,5 @@ $options = [
 try {
      $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (\PDOException $e) {
-     // Tampilkan pesan error yang ramah pengguna
-     // Di produksi, ini harus dicatat (log) bukan ditampilkan
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }

@@ -1,9 +1,8 @@
 <?php
 session_start();
 require 'config/database.php';
-require 'src/functions.php'; // Panggil functions.php
+require 'src/functions.php';
 
-// Ambil ID dari URL
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if ($id == 0) {
@@ -12,7 +11,6 @@ if ($id == 0) {
 }
 
 try {
-    // Ganti nama tabel ke 'barang'
     $sql = "DELETE FROM barang WHERE id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);

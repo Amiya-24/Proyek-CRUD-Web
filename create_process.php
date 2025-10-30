@@ -1,19 +1,15 @@
 <?php
-// Impor file konfigurasi dan fungsi
 require 'config/database.php';
 require 'src/functions.php'; 
 
-// Cek apakah form disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Ambil & sanitasi data dari form
     $nama_barang = isset($_POST['nama_barang']) ? trim($_POST['nama_barang']) : '';
     $deskripsi = isset($_POST['deskripsi']) ? trim($_POST['deskripsi']) : '';
     $sku = isset($_POST['sku']) ? trim($_POST['sku']) : '';
     $lokasi = isset($_POST['lokasi']) ? trim($_POST['lokasi']) : '';
     $stok = isset($_POST['stok']) ? filter_var($_POST['stok'], FILTER_VALIDATE_INT) : false;
 
-    // Validasi sederhana
     $errors = [];
     if (empty($nama_barang)) {
         $errors[] = "Nama barang tidak boleh kosong.";
@@ -28,12 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$nama_barang, $deskripsi, $sku, $stok, $lokasi]);
 
-            // Gunakan helper set_message() dan redirect()
             set_message("Data barang berhasil disimpan!", "sukses");
             redirect("index.php");
 
         } catch (PDOException $e) {
-            // Tangani error, misal jika SKU duplikat
             if ($e->getCode() == 23000) { // Error duplikat
                 set_message("Gagal menyimpan: SKU '{$sku}' sudah ada.", "error");
             } else {

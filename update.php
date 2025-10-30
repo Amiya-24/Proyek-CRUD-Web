@@ -2,21 +2,18 @@
 require 'config/database.php';
 require 'src/functions.php';
 
-// Ambil ID dari URL
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if ($id == 0) {
-    redirect('index.php'); // Redirect jika ID tidak valid
+    redirect('index.php');
 }
 
 try {
-    // Ambil data barang berdasarkan ID
     $sql = "SELECT * FROM barang WHERE id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
     $barang = $stmt->fetch();
 
-    // Jika data tidak ditemukan
     if (!$barang) {
         set_message("Data tidak ditemukan.", "error");
         redirect('index.php');
@@ -26,7 +23,6 @@ try {
     die("Error: " . $e->getMessage());
 }
 
-// Tampilkan header SETELAH logika fetch data
 require 'templates/header.php';
 ?>
 

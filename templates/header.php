@@ -1,9 +1,6 @@
 <?php
-// Impor file functions.php
-// Kita asumsikan header.php dipanggil dari file di root (cth: index.php)
 require_once 'src/functions.php';
 
-// Fungsi ini akan memulai session DAN menampilkan pesan jika ada
 display_message(); 
 ?>
 <!DOCTYPE html>
@@ -22,5 +19,4 @@ display_message();
     <main class="container">
         
     <?php
-    // Logika pesan sudah dipindah ke display_message() di atas
     ?>

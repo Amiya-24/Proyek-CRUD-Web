@@ -233,7 +233,6 @@ footer {
         margin: -15px -15px 15px -15px;
     }
     
-    /* Paksa tabel menjadi block, tapi izinkan scroll horizontal */
     table {
         display: block;
         overflow-x: auto;

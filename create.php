@@ -1,5 +1,4 @@
 <?php
-// templates/header.php sudah menyertakan session_start()
 require 'templates/header.php'; 
 ?>
 

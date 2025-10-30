@@ -2,42 +2,34 @@
 require 'config/database.php';
 require 'templates/header.php';
 
-// --- Logika Paginasi ---
 $data_per_halaman = 5;
 $halaman_aktif = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
 $offset = ($halaman_aktif - 1) * $data_per_halaman;
 
-// --- Logika Pencarian ---
 $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
-$params = []; // Simpan parameter untuk PDO
+$params = [];
 
-// Query dasar
 $sql = "SELECT * FROM barang";
 $sql_total = "SELECT COUNT(*) FROM barang";
 
-// Tambahkan kondisi WHERE jika ada pencarian
 if (!empty($keyword)) {
     $where_clause = " WHERE nama_barang LIKE ? OR sku LIKE ?";
     $sql .= $where_clause;
     $sql_total .= $where_clause;
     $params[] = "%$keyword%";
-    $params[] = "%$keyword%"; // Tambahkan parameter kedua untuk SKU
+    $params[] = "%$keyword%";
 }
 
-// Tambahkan ORDER BY
 $sql .= " ORDER BY created_at DESC";
 
-// --- Hitung Total Data (untuk paginasi) ---
 $stmt_total = $pdo->prepare($sql_total);
 $stmt_total->execute($params);
 $total_data = $stmt_total->fetchColumn();
 $total_halaman = ceil($total_data / $data_per_halaman);
 
 
-// --- Tambahkan LIMIT & OFFSET ke query utama ---
 $sql .= " LIMIT " . (int)$data_per_halaman . " OFFSET " . (int)$offset;
 
-// --- Eksekusi Query Utama ---
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $barangs = $stmt->fetchAll();
